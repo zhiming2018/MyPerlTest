@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+use strict;
+
+my $file = shift;
+open(FH, $file) or die $!;
+while(<FH>){
+  if($_ =~ /^>/){
+    next;
+  }
+  print $_;
+}
+close FH;
